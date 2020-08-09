@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float projectileSpeed = 5.0f;
     public float projectileFireRate = 0.2f;
 
+    public float health = 250.0f;
     public float speed = 15.0f;
     public float padding = 1.0f;
 
@@ -47,6 +48,18 @@ public class PlayerController : MonoBehaviour
 
         float newX = Mathf.Clamp(transform.position.x, xmin, xmax);
         transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+    }
+
+    void OnTriggerEnter2D(Collider2D collider){
+        var missile = collider.gameObject.GetComponent<Projectile>() as Projectile;
+        if(missile){
+            health -= missile.GetDamage();
+            missile.Hit();
+
+            if(health <= 0){
+                Destroy(gameObject);
+            }
+        }
     }
 
     void Fire(){

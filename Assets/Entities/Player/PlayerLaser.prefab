@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5926357352835975447}
   - component: {fileID: 7131434081997949188}
   - component: {fileID: 2236921495204862518}
+  - component: {fileID: -8957672205385435687}
   m_Layer: 0
-  m_Name: PlayerLaser
+  m_Name: PlayerLaser 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,7 +99,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -131,3 +132,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09, y: 0.37}
   m_EdgeRadius: 0
+--- !u!114 &-8957672205385435687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831266759839482558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af950e8447743a49850f377e4d9506a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
