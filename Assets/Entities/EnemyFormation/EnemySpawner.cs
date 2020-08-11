@@ -23,11 +23,8 @@ public class EnemySpawner : MonoBehaviour
 
         xmin = leftBoundary.x;
         xmax = rightBoundary.x;
-
-        foreach(Transform child in transform){
-            var enemy = Instantiate(enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
-            enemy.transform.parent = child;
-        }
+        
+        SpawnEnemies();
     }
 
     void OnDrawGizmos(){
@@ -52,5 +49,24 @@ public class EnemySpawner : MonoBehaviour
         else if(rightEdge >= xmax){
             movingRight = false;
         }
+
+        if(AllEnemiesDead()){
+            SpawnEnemies();
+        }
+    }
+
+    void SpawnEnemies(){
+        foreach(Transform child in transform){
+            var enemy = Instantiate(enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
+            enemy.transform.parent = child;
+        }
+    }
+
+    bool AllEnemiesDead(){
+        foreach(Transform position in transform){
+            if(position.childCount > 0)
+                return false;
+        }
+        return true;
     }
 }
