@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5806882179490566281}
   - component: {fileID: -4457293281780131977}
   - component: {fileID: -5675416465527772756}
+  - component: {fileID: 2101615257}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -148,3 +149,22 @@ MonoBehaviour:
   projectileSpeed: 7.5
   shotsPerSecond: 0.5
   health: 150
+--- !u!95 &2101615257
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645968337218118702}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8fec24b6cfd76154ca574e8c0eb1bfaf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
