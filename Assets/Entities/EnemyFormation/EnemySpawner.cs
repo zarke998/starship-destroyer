@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public float spawnDelay = 0.5f;
 
     public float width = 15.0f;
     public float height = 10.0f;
@@ -24,7 +25,8 @@ public class EnemySpawner : MonoBehaviour
         xmin = leftBoundary.x;
         xmax = rightBoundary.x;
         
-        SpawnEnemies();
+        // SpawnEnemies();
+        SpawnUntilFull();
     }
 
     void OnDrawGizmos(){
@@ -51,7 +53,8 @@ public class EnemySpawner : MonoBehaviour
         }
 
         if(AllEnemiesDead()){
-            SpawnEnemies();
+            // SpawnEnemies();
+            SpawnUntilFull();
         }
     }
 
@@ -60,6 +63,23 @@ public class EnemySpawner : MonoBehaviour
             var enemy = Instantiate(enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
             enemy.transform.parent = child;
         }
+    }
+
+    void SpawnUntilFull(){
+        var freePosition = NextFreePosition();
+        if(freePosition){
+            var enemy = Instantiate(enemyPrefab, freePosition.position, Quaternion.identity) as GameObject;
+            enemy.transform.parent = freePosition;
+            Invoke("SpawnUntilFull", spawnDelay);
+        }
+    }
+
+    Transform NextFreePosition(){
+        foreach(Transform position in transform){
+            if(position.childCount == 0)
+                return position;
+        }
+        return null;
     }
 
     bool AllEnemiesDead(){
