@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1541944299632591666}
   - component: {fileID: 6157961300044735832}
   - component: {fileID: 5978094124843909132}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae0d2ec0dce798478cfe9a3e3f0130b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 831266759839482558, guid: 70b807f4b4a72a64593edaea0e356f1c, type: 3}
+  projectile: {fileID: 831266759839482558, guid: 934f8cf9667a26e4b9c730efe5ad8ddf, type: 3}
   projectileSpeed: 15
   projectileFireRate: 0.2
   fireSound: {fileID: 8300000, guid: 4e06225117e62cd4e99642a6fe34ff43, type: 3}
