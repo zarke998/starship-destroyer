@@ -9,8 +9,10 @@ public class EnemyBehaviour : MonoBehaviour
     public float projectileSpeed = 1.0f;
     public float shotsPerSecond = 0.5f;
     private float projectileOffsetY = -1f;
+    public AudioClip fireSound;
 
     public float health = 150f;
+    public AudioClip deathSound;
 
     private ScoreKeeper scoreKeeper;
     public int scoreValue = 150;
@@ -33,8 +35,7 @@ public class EnemyBehaviour : MonoBehaviour
             missile.Hit();
 
             if(health <= 0){
-                Destroy(gameObject);
-                scoreKeeper.Score(scoreValue);
+                Die();
             }
         }
     }
@@ -42,5 +43,12 @@ public class EnemyBehaviour : MonoBehaviour
     void Fire(){
         var missile = Instantiate(projectilePrefab, transform.position + new Vector3(0, projectileOffsetY, 0), Quaternion.identity) as GameObject;
         missile.GetComponent<Rigidbody2D>().velocity = Vector3.down * projectileSpeed;
+        AudioSource.PlayClipAtPoint(fireSound, transform.position);
+    }
+
+    void Die(){
+        AudioSource.PlayClipAtPoint(deathSound, transform.position);
+        Destroy(gameObject);
+        scoreKeeper.Score(scoreValue);
     }
 }

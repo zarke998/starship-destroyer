@@ -148,7 +148,10 @@ MonoBehaviour:
   projectilePrefab: {fileID: 831266759839482558, guid: 70b807f4b4a72a64593edaea0e356f1c, type: 3}
   projectileSpeed: 7.5
   shotsPerSecond: 0.5
+  fireSound: {fileID: 8300000, guid: cda409535660c8c409a92e6761eaea21, type: 3}
   health: 150
+  deathSound: {fileID: 8300000, guid: aa485a81d48af2f4abf82833448c01e6, type: 3}
+  scoreValue: 150
 --- !u!95 &2101615257
 Animator:
   serializedVersion: 3

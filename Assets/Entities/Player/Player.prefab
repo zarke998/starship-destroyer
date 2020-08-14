@@ -166,5 +166,7 @@ MonoBehaviour:
   projectile: {fileID: 831266759839482558, guid: 70b807f4b4a72a64593edaea0e356f1c, type: 3}
   projectileSpeed: 15
   projectileFireRate: 0.2
+  fireSound: {fileID: 8300000, guid: 4e06225117e62cd4e99642a6fe34ff43, type: 3}
+  health: 250
   speed: 15
   padding: 1
