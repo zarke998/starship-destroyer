@@ -639,8 +639,9 @@ GameObject:
   - component: {fileID: 1822411183}
   - component: {fileID: 1822411185}
   - component: {fileID: 1822411184}
+  - component: {fileID: 1822411186}
   m_Layer: 5
-  m_Name: GameOverScore
+  m_Name: Game Over Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -707,6 +708,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822411182}
   m_CullTransparentMesh: 0
+--- !u!114 &1822411186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822411182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b0591e758ed7cb478822de0e8c8ea22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2123434448 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11400000, guid: fe9188b7c592e49b396b4f5e61d5a8ca, type: 3}
