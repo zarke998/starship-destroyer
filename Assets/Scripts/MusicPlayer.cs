@@ -1,17 +1,58 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using System;
 
 public class MusicPlayer : MonoBehaviour {
 	static MusicPlayer instance = null;
+
+	public AudioClip startMenuClip;
+	public AudioClip gameClip;
+	public AudioClip endMenuClip;
+
+	private AudioSource audioSource;
 	
-	void Start () {
+	void Awake () {
 		if (instance != null && instance != this) {
 			Destroy (gameObject);
 			print ("Duplicate music player self-destructing!");
 		} else {
 			instance = this;
 			GameObject.DontDestroyOnLoad(gameObject);
+
+			audioSource = GetComponent<AudioSource>();
 		}
-		
+	}
+
+	void OnEnable(){
+		SceneManager.sceneLoaded += OnSceneLoaded;
+		OnSceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+	}
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
+    {
+		audioSource.Stop();
+
+		switch(scene.buildIndex){
+			case (int)GameScenes.StartScene:
+				audioSource.clip = startMenuClip;
+				break;
+			case (int)GameScenes.GameScene:
+				audioSource.clip = gameClip;
+				break;
+			case (int)GameScenes.EndScene:
+				audioSource.clip = endMenuClip;
+				break;
+			default:
+				audioSource.clip = gameClip;
+				break;
+		}
+
+		audioSource.loop = true;
+		audioSource.Play();
+    }
+
+	void OnDisable(){
+		SceneManager.sceneLoaded -= OnSceneLoaded;
 	}
 }
