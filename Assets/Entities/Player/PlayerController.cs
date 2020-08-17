@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,9 +12,10 @@ public class PlayerController : MonoBehaviour
     public AudioClip fireSound;
 
     public int healthLives = 3;
+    private PlayerHealthDisplay healthDisplay;
+
     public float speed = 15.0f;
     public float padding = 1.0f;
-
 
 
     float xmin;
@@ -31,6 +33,10 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log(leftmost.ToString());
         Debug.Log(rightmost.ToString());
+
+
+        healthDisplay = GameObject.Find("Player Health Display").GetComponent<PlayerHealthDisplay>();
+        healthDisplay.UpdateHealth(healthLives);
     }
 
     void Update()
@@ -57,6 +63,8 @@ public class PlayerController : MonoBehaviour
         var missile = collider.gameObject.GetComponent<Projectile>() as Projectile;
         if(missile){
             healthLives--;
+            healthDisplay.UpdateHealth(healthLives);
+
             missile.Hit();
 
             if(healthLives <= 0){
