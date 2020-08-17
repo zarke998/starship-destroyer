@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float projectileFireRate = 0.2f;
     public AudioClip fireSound;
 
-    public float health = 250.0f;
+    public int healthLives = 3;
     public float speed = 15.0f;
     public float padding = 1.0f;
 
@@ -56,10 +56,10 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider){
         var missile = collider.gameObject.GetComponent<Projectile>() as Projectile;
         if(missile){
-            health -= missile.GetDamage();
+            healthLives--;
             missile.Hit();
 
-            if(health <= 0){
+            if(healthLives <= 0){
                 Die();
             }
         }
