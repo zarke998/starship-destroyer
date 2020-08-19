@@ -8,6 +8,16 @@ public class GameOverScoreDisplay : MonoBehaviour
     void Start()
     {
         var label = GetComponent<Text>();
-        label.text = $"Your score: {ScoreKeeper.score}";
+        var statistics = PlayerStatistics.Instance;
+
+        if(ScoreKeeper.score > statistics.HighScore){
+            label.text = $"New High score: {ScoreKeeper.score}";
+
+            statistics.HighScore = ScoreKeeper.score;
+            statistics.Save();
+        }
+        else{
+            label.text = $"Your score: {ScoreKeeper.score}";
+        }
     }
 }
