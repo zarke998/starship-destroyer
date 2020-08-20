@@ -1,12 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class Formation : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-    public float spawnDelay = 0.5f;
-
     public float width = 15.0f;
     public float height = 10.0f;
 
@@ -15,6 +13,8 @@ public class EnemySpawner : MonoBehaviour
 
     public float speed = 15.0f;
     private bool movingRight;
+
+    public event EventHandler FormationDead;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
         xmin = leftBoundary.x;
         xmax = rightBoundary.x;
         
-        // SpawnEnemies();
+        // StartCoroutine(SpawnUntilFull());
         SpawnUntilFull();
     }
 
@@ -53,33 +53,15 @@ public class EnemySpawner : MonoBehaviour
         }
 
         if(AllEnemiesDead()){
-            // SpawnEnemies();
-            SpawnUntilFull();
-        }
-    }
-
-    void SpawnEnemies(){
-        foreach(Transform child in transform){
-            var enemy = Instantiate(enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
-            enemy.transform.parent = child;
+            OnFormationDead();
         }
     }
 
     void SpawnUntilFull(){
-        var freePosition = NextFreePosition();
-        if(freePosition){
-            var enemy = Instantiate(enemyPrefab, freePosition.position, Quaternion.identity) as GameObject;
-            enemy.transform.parent = freePosition;
-            Invoke("SpawnUntilFull", spawnDelay);
-        }
-    }
-
-    Transform NextFreePosition(){
         foreach(Transform position in transform){
-            if(position.childCount == 0)
-                return position;
+            var positionScript = position.gameObject.GetComponent<Position>();
+            positionScript.SpawnEnemy();
         }
-        return null;
     }
 
     bool AllEnemiesDead(){
@@ -88,5 +70,11 @@ public class EnemySpawner : MonoBehaviour
                 return false;
         }
         return true;
+    }
+
+    void OnFormationDead(){
+        var tempHandler = FormationDead;
+
+        tempHandler?.Invoke(this, new EventArgs());
     }
 }
