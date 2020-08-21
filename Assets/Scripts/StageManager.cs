@@ -2,12 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageManager : MonoBehaviour
 {
     public GameObject[] formationPrefabs;
     private GameObject currentFormation;
     public float formationSpawnDelay = 0.5f;
+    
+    private int stage = 1;
+    private float stageFireSpeedIncrement = 0.1f;
+    private int formationsPerStage = 5;
+    private int formationDeaths;
 
     public GameObject[] bosses;
 
@@ -17,15 +23,19 @@ public class StageManager : MonoBehaviour
         currentFormation.GetComponent<Formation>().FormationDead += FormationDied;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void FormationDied(object sender, EventArgs e){
         currentFormation.GetComponent<Formation>().FormationDead -= FormationDied;
         Destroy(currentFormation);
+        formationDeaths++;
+
+        if(formationDeaths >= formationsPerStage){
+            stage++;
+            GameObject.Find("Stage").GetComponent<Text>().text = stage.ToString();
+
+            EnemyBehaviour.shotsPerSecond += stageFireSpeedIncrement;
+            
+            formationDeaths = 0;
+        }
 
         Invoke("CreateFormation", formationSpawnDelay);
     }

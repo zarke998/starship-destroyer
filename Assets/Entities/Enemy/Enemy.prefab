@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2687192329996446716}
   - component: {fileID: 5806882179490566281}
   - component: {fileID: -4457293281780131977}
-  - component: {fileID: -5675416465527772756}
   - component: {fileID: 2101615257}
+  - component: {fileID: -5675416465527772756}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
@@ -133,25 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.93, y: 0.84}
   m_EdgeRadius: 0
---- !u!114 &-5675416465527772756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645968337218118702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a171ff8389d4fe747b1cbabc0f4e6103, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 831266759839482558, guid: 70b807f4b4a72a64593edaea0e356f1c, type: 3}
-  projectileSpeed: 7.5
-  shotsPerSecond: 0.5
-  fireSound: {fileID: 8300000, guid: cda409535660c8c409a92e6761eaea21, type: 3}
-  health: 150
-  deathSound: {fileID: 8300000, guid: aa485a81d48af2f4abf82833448c01e6, type: 3}
-  scoreValue: 150
 --- !u!95 &2101615257
 Animator:
   serializedVersion: 3
@@ -171,3 +152,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5675416465527772756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645968337218118702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a171ff8389d4fe747b1cbabc0f4e6103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 831266759839482558, guid: 70b807f4b4a72a64593edaea0e356f1c, type: 3}
+  projectileSpeed: 7.5
+  shotsPerSecond: 0.5
+  fireSound: {fileID: 8300000, guid: cda409535660c8c409a92e6761eaea21, type: 3}
+  health: 150
+  deathSound: {fileID: 8300000, guid: aa485a81d48af2f4abf82833448c01e6, type: 3}
+  scoreValue: 150

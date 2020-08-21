@@ -7,7 +7,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public float projectileSpeed = 1.0f;
-    public float shotsPerSecond = 0.5f;
+    public static float shotsPerSecond = 0.2f;
     private float projectileOffsetY = -1f;
     public AudioClip fireSound;
 
