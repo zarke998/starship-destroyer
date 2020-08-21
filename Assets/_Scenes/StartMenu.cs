@@ -11,12 +11,14 @@ public class StartMenu : MonoBehaviour
         Initialize();
     }  
 
+    void Start(){
+        musicEnabled = Settings.Instance.MusicEnabled;
+        MusicPlayerToggle(musicEnabled);
+    }
+
     void Initialize(){
         PlayerStatistics.Instance.Load();
         Settings.Instance.Load();
-
-        musicEnabled = Settings.Instance.MusicEnabled;
-        MusicPlayerToggle(musicEnabled);
     }
 
     public void Music_Click(){
