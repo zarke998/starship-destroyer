@@ -36,12 +36,15 @@ public class MusicPlayer : MonoBehaviour {
 		switch(scene.buildIndex){
 			case (int)GameScenes.StartScene:
 				audioSource.clip = startMenuClip;
+				audioSource.volume = 0.25f;
 				break;
 			case (int)GameScenes.GameScene:
 				audioSource.clip = gameClip;
+				audioSource.volume = 0.35f;		
 				break;
 			case (int)GameScenes.EndScene:
 				audioSource.clip = endMenuClip;
+				audioSource.volume = 0.15f;
 				break;
 			default:
 				audioSource.clip = gameClip;
