@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using System;
 
 public class MusicPlayer : MonoBehaviour {
-	static MusicPlayer instance = null;
+	public static MusicPlayer instance = null;
 
 	public AudioClip startMenuClip;
 	public AudioClip gameClip;
