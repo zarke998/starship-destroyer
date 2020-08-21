@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour
 {
+    private GameObject startMenuPanel;
+    private GameObject instructionsPanel;
+
     bool musicEnabled;
 
     void Awake(){
         Initialize();
-    }  
+    }
 
     void Start(){
         musicEnabled = Settings.Instance.MusicEnabled;
@@ -19,6 +22,10 @@ public class StartMenu : MonoBehaviour
     void Initialize(){
         PlayerStatistics.Instance.Load();
         Settings.Instance.Load();
+
+        startMenuPanel = GameObject.Find("Start Menu");
+        instructionsPanel = GameObject.Find("InstructionsPanel");
+        instructionsPanel.SetActive(false);
     }
 
     public void Music_Click(){
@@ -41,12 +48,12 @@ public class StartMenu : MonoBehaviour
     }
 
     public void Instructions_Click(){
-        GameObject.Find("Start Menu").GetComponent<Canvas>().enabled = false;
-        GameObject.Find("InstructionsPanel").GetComponent<Canvas>().enabled = true;
+        instructionsPanel.SetActive(true);
+        startMenuPanel.SetActive(false);
     }
 
     public void InstructionsBack_Click(){
-        GameObject.Find("Start Menu").GetComponent<Canvas>().enabled = true;
-        GameObject.Find("InstructionsPanel").GetComponent<Canvas>().enabled = false;
+        instructionsPanel.SetActive(false);
+        startMenuPanel.SetActive(true);
     }
 }

@@ -34,9 +34,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log(leftmost.ToString());
         Debug.Log(rightmost.ToString());
 
-
         healthDisplay = GameObject.Find("Player Health Display").GetComponent<PlayerHealthDisplay>();
-        healthDisplay.UpdateHealth(healthLives);
     }
 
     void Update()
