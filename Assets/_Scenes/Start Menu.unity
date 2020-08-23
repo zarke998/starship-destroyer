@@ -4947,7 +4947,7 @@ GameObject:
   - component: {fileID: 63489125}
   - component: {fileID: 63489124}
   - component: {fileID: 63489123}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Quit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10085,7 +10085,7 @@ GameObject:
   - component: {fileID: 369604043}
   - component: {fileID: 369604045}
   - component: {fileID: 369604044}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10165,7 +10165,7 @@ GameObject:
   - component: {fileID: 602546418}
   - component: {fileID: 602546417}
   - component: {fileID: 602546416}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Instructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10361,7 +10361,7 @@ GameObject:
   - component: {fileID: 720264912}
   - component: {fileID: 720264911}
   - component: {fileID: 720264913}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10496,7 +10496,7 @@ GameObject:
   - component: {fileID: 822728648}
   - component: {fileID: 822728647}
   - component: {fileID: 822728649}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Start Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10558,14 +10558,14 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 929709347}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &822728649
 MonoBehaviour:
@@ -10600,7 +10600,7 @@ GameObject:
   - component: {fileID: 869067660}
   - component: {fileID: 869067659}
   - component: {fileID: 869067658}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10772,7 +10772,7 @@ GameObject:
   - component: {fileID: 945308960}
   - component: {fileID: 945308959}
   - component: {fileID: 945308958}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10906,7 +10906,7 @@ GameObject:
   - component: {fileID: 1132640946}
   - component: {fileID: 1132640948}
   - component: {fileID: 1132640947}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text1st
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10986,7 +10986,7 @@ GameObject:
   - component: {fileID: 1183000723}
   - component: {fileID: 1183000722}
   - component: {fileID: 1183000721}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11120,7 +11120,7 @@ GameObject:
   - component: {fileID: 1273397221}
   - component: {fileID: 1273397223}
   - component: {fileID: 1273397222}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text3rd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11210,7 +11210,7 @@ GameObject:
   - component: {fileID: 1573332608}
   - component: {fileID: 1573332610}
   - component: {fileID: 1573332609}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Text2nd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11289,7 +11289,7 @@ GameObject:
   - component: {fileID: 1654444586}
   - component: {fileID: 1654444588}
   - component: {fileID: 1654444587}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HighScoreLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11371,7 +11371,7 @@ GameObject:
   - component: {fileID: 1661970565}
   - component: {fileID: 1661970564}
   - component: {fileID: 1661970566}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: HighScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11522,7 +11522,7 @@ GameObject:
   - component: {fileID: 1985621726}
   - component: {fileID: 1985621725}
   - component: {fileID: 1985621724}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: InstructionsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11580,7 +11580,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 929709347}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
