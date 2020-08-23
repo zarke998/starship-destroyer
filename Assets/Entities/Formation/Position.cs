@@ -5,9 +5,10 @@ using UnityEngine;
 public class Position : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public float gizmoRadius = 0.5f;
 
     void OnDrawGizmos(){
-        Gizmos.DrawWireSphere(transform.position, 0.5f);
+        Gizmos.DrawWireSphere(transform.position, gizmoRadius);
     }
 
     public void SpawnEnemy(){
