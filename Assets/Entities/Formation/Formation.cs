@@ -11,7 +11,7 @@ public class Formation : MonoBehaviour
     private float xmin;
     private float xmax;
 
-    public float speed = 15.0f;
+    public float speed = 2.5f;
     private bool movingRight;
 
     public event EventHandler FormationDead;

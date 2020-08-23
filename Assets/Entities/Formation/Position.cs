@@ -8,7 +8,7 @@ public class Position : MonoBehaviour
     public float gizmoRadius = 0.5f;
 
     void OnDrawGizmos(){
-        Gizmos.DrawWireSphere(transform.position, gizmoRadius);
+        Gizmos.DrawSphere(transform.position, gizmoRadius);
     }
 
     public void SpawnEnemy(){

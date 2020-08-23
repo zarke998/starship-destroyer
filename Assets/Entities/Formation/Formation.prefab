@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 907309197157721316}
   - component: {fileID: 907309197157721319}
   m_Layer: 0
-  m_Name: Formation 1
+  m_Name: Formation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 11.15
   height: 5.1
-  speed: 5
+  speed: 1
 --- !u!1001 &627849166
 PrefabInstance:
   m_ObjectHideFlags: 0
