@@ -12,7 +12,7 @@ public class StageManager : MonoBehaviour
     
     private int stage = 1;
     private float stageFireSpeedIncrement = 0.1f;
-    private int formationsPerStage = 5;
+    private int formationsPerStage = 3;
     private int formationDeaths;
 
     public GameObject[] bosses;
